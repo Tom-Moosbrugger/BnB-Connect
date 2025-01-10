@@ -35,6 +35,12 @@ export const loginThunk = (credentials) => async dispatch => {
     return response;
 }
 
+export const logoutThunk = () => async dispatch => {
+    const response = csrfFetch('/api/session', { method: 'DELETE' });
+
+    dispatch(removeUser());
+};
+
 export const restoreUserThunk = () => async dispatch => {
     const response = await csrfFetch('/api/session');
 
@@ -43,7 +49,7 @@ export const restoreUserThunk = () => async dispatch => {
     dispatch(setUser(data.user));
 
     return response;
-}
+};
 
 export const signupUserThunk = (userInfo) => async dispatch => {
     const response = await csrfFetch('/api/users', {
