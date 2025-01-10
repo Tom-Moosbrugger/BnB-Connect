@@ -18,13 +18,13 @@ form {
     width: 100%;
 }
 
-.form-div {
+.login-form-div {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     row-gap: 10px;
-    width: 100%;
+    width: 75%;
     height: 75px;
     margin: 10px 0;
 }
@@ -38,11 +38,24 @@ form {
     height: 25px;
 }
 
-.form-div > input {
-    width: 75%
+.login-form-div > input {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 100%;
+    height: 25px;
+    text-indent: 10px;
 }
 
-button {
+.login-button-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.login-button {
     width: 200px;
     height: 40px;
     border: 1px solid black;
@@ -50,7 +63,7 @@ button {
     background: orange;
 }
 
-button:hover {
+.login-button:hover {
     background-color: white;
     color: black;
 }

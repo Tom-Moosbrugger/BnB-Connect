@@ -29,9 +29,9 @@ const LoginFormPage = () => {
 
     return (
         <div  className="login-wrapper">
-            <h2>Log in or sign up</h2>
+            <h2>Log In</h2>
             <form onSubmit={handleSubmit}>
-                <div className="form-div">
+                <div className="login-form-div">
                     <label>Username or email:</label>
                     <input 
                     type='text'
@@ -41,7 +41,7 @@ const LoginFormPage = () => {
                     onChange={e => setCredential(e.target.value)}
                     />
                 </div>
-                <div className="form-div">
+                <div className="login-form-div">
                     <label>Password:</label>
                     <input 
                     type='text'
@@ -54,8 +54,8 @@ const LoginFormPage = () => {
                 <div className="error-div">
                     {errors.credential && <p className="error-message">*{errors.credential}</p>}
                 </div>
-                <div className="form-div">
-                    <button>Login</button>
+                <div className="login-button-div">
+                    <button className="login-button">Login</button>
                 </div>
                
             </form>
