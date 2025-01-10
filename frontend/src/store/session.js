@@ -39,6 +39,8 @@ export const logoutThunk = () => async dispatch => {
     const response = csrfFetch('/api/session', { method: 'DELETE' });
 
     dispatch(removeUser());
+
+    return response;
 };
 
 export const restoreUserThunk = () => async dispatch => {
