@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { signupUserThunk } from '../../store/session';
-import './SignupFormPage.css'
+import { useModalContext } from "../../context/Modal";
+import './SignupFormModal.css'
 
-const SignupFormPage = () => {
+const SignupFormModal = () => {
+    const dispatch = useDispatch();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -12,11 +13,8 @@ const SignupFormPage = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({});
-    const dispatch = useDispatch();
-    const sessionUser = useSelector((state) => state.session.user);
-
-    if (sessionUser) return <Navigate to='/' replace={true}/>
-
+    const { closeModal } = useModalContext();
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -25,12 +23,13 @@ const SignupFormPage = () => {
         const errors = {};
 
         if (password === confirmPassword) {
-            return dispatch(signupUserThunk({ username, email, firstName, lastName, password })).catch(
-                async (res) => {
-                    const data = await res.json();
-                    if (data?.errors) setErrors(data.errors);
-                }
-            );
+            return dispatch(signupUserThunk({ username, email, firstName, lastName, password }))
+                .then(closeModal)
+                .catch(async (res) => {
+                        const data = await res.json();
+                        if (data?.errors) setErrors(data.errors);
+                    }
+                );
         } else if (password !== confirmPassword) {
             errors.password = 'Passwords do not match'
             setErrors(errors);
@@ -128,4 +127,4 @@ const SignupFormPage = () => {
     );
 };
 
-export default SignupFormPage;
+export default SignupFormModal;
