@@ -8,7 +8,7 @@
     align-items: center;
     margin: auto auto;
     width: 100%; 
-    padding-bottom: 15px;
+    padding: 15px 0;
 }
 
 form {
@@ -23,9 +23,7 @@ form {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    row-gap: 10px;
     width: 75%;
-    height: 75px;
     margin: 10px 0;
 }
 
@@ -56,15 +54,15 @@ form {
 }
 
 .signup-button {
-    width: 200px;
-    height: 40px;
+    width: 60%;
+    height: 25px;
     border: 1px solid black;
     border-radius: 20px;
     background: orange;
 }
 
 .signup-button:hover {
-    background-color: white;
+    background-color: orangered;
     color: black;
 }
 

@@ -41,7 +41,6 @@ const SignupFormModal = () => {
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
                 <div className="signup-form-div">
-                    <label>Username:</label>
                     <input 
                     type='text'
                     required={true}
@@ -54,7 +53,6 @@ const SignupFormModal = () => {
                     {errors.username && <p className="error-message">*{errors.username}</p>}
                 </div>
                 <div className="signup-form-div">
-                    <label>Email:</label>
                     <input 
                     type='text'
                     required={true}
@@ -67,7 +65,6 @@ const SignupFormModal = () => {
                     {errors.email && <p className="error-message">*{errors.email}</p>}
                 </div>
                 <div className="signup-form-div">
-                    <label>First name:</label>
                     <input 
                     type='text'
                     required={true}
@@ -80,7 +77,6 @@ const SignupFormModal = () => {
                     {errors.firstName && <p className="error-message">*{errors.firstName}</p>}
                 </div>
                 <div className="signup-form-div">
-                    <label>Last name:</label>
                     <input 
                     type='text'
                     required={true}
@@ -93,7 +89,6 @@ const SignupFormModal = () => {
                     {errors.lastName && <p className="error-message">*{errors.lastName}</p>}
                 </div>
                 <div className="signup-form-div">
-                    <label>Password:</label>
                     <input 
                     type='text'
                     required={true}
@@ -106,7 +101,6 @@ const SignupFormModal = () => {
                     {errors.password && <p className="error-message">*{errors.password}</p>}
                 </div>
                 <div className="signup-form-div">
-                    <label>Confirm password:</label>
                     <input 
                     type='text'
                     required={true}
@@ -119,7 +113,7 @@ const SignupFormModal = () => {
                     {errors.password && <p className="error-message">*{errors.password}</p>}
                 </div>
                 <div className="signup-button-div">
-                    <button className='signup-button'>Signup</button>
+                    <button className='signup-button'>Sign up</button>
                 </div>
                
             </form>

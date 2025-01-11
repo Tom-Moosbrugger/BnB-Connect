@@ -30,7 +30,6 @@ const LoginFormModal = () => {
             <h2>Log In</h2>
             <form onSubmit={handleSubmit}>
                 <div className="login-form-div">
-                    <label>Username or email:</label>
                     <input 
                     className="login-form-input"
                     type='text'
@@ -41,7 +40,6 @@ const LoginFormModal = () => {
                     />
                 </div>
                 <div className="login-form-div">
-                    <label>Password:</label>
                     <input 
                     className="login-form-input"                    
                     type='text'
@@ -55,7 +53,7 @@ const LoginFormModal = () => {
                     {errors.credential && <p className="error-message">*{errors.credential}</p>}
                 </div>
                 <div className="login-button-div">
-                    <button className="login-button">Login</button>
+                    <button className="login-button">Log in</button>
                 </div>
                
             </form>
