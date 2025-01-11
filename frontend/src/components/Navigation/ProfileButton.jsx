@@ -35,7 +35,7 @@ const ProfileButton = ({ user }) => {
     const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
 
     return (
-        <div className="profile-icon" style={{ color: 'black', fontSize: '30px'}}>
+        <div className="profile-icon">
             <button onClick={toggleMenu}>
                 <BsPersonCircle />  
             </button>

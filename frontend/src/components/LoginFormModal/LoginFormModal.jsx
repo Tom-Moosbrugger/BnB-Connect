@@ -1,29 +1,27 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { loginThunk } from "../../store/session";
-import { Navigate } from 'react-router-dom'
-import './LoginForm.css';
+import { useModalContext } from "../../context/Modal";
+import './LoginFormModal.css';
 
-const LoginFormPage = () => {
+const LoginFormModal = () => {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
-    const sessionUser = useSelector((state) => state.session.user);
-
-    if (sessionUser) return <Navigate to='/' replace={true}/>
+    const { closeModal } = useModalContext();
 
     const handleSubmit = async e => {
         e.preventDefault();
 
         setErrors({});
 
-        return dispatch(loginThunk({ credential, password })).catch(
-            async (res) => {
-              const data = await res.json();
-              if (data?.errors) setErrors(data.errors);
-            }
-        );
+        return dispatch(loginThunk({ credential, password }))
+            .then(closeModal)
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data?.errors) setErrors(data.errors);
+            });
     };
     
 
@@ -34,6 +32,7 @@ const LoginFormPage = () => {
                 <div className="login-form-div">
                     <label>Username or email:</label>
                     <input 
+                    className="login-form-input"
                     type='text'
                     required={true}
                     placeholder="Enter your username or email..."
@@ -44,6 +43,7 @@ const LoginFormPage = () => {
                 <div className="login-form-div">
                     <label>Password:</label>
                     <input 
+                    className="login-form-input"                    
                     type='text'
                     required={true}
                     placeholder="Enter your password..."
@@ -63,4 +63,4 @@ const LoginFormPage = () => {
     );
 };
 
-export default LoginFormPage;
+export default LoginFormModal;
