@@ -4,7 +4,38 @@
     align-items: center;
     justify-content: space-between;   
     border-bottom: 1px solid grey;
-    margin: 20px 0;
+    padding: 30px 10px;
+    position: relative;
+}
+
+.profile-button {
+    display: flex;
+    font-size: 30px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+
+.profile-dropdown {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 25%;
+    height: 200%;
+    padding: 0;
+}
+
+.modal-button {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: orange;
 }
 
 .hidden {
