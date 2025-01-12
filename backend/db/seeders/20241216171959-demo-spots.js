@@ -21,7 +21,7 @@ module.exports = {
         lat: 37.7645358,
         lng: -122.4730327,
         name: "Modern Bungalow",
-        description: "This sleek, modern house in Los Angeles boasts open-concept living with floor-to-ceiling windows, a gourmet kitchen, and stylish decor. Relax by the pool or enjoy panoramic city views from the rooftop. Just minutes from trendy restaurants and shops, it's a true urban oasis.",
+        description: "This sleek, modern house boasts open-concept living with high windows, a gourmet kitchen, and stylish decor. Relax by the pool or enjoy panoramic city views from the rooftop. Just minutes from trendy restaurants and shops, it's a true urban oasis.",
         price: 400,
       },
       {
@@ -33,7 +33,7 @@ module.exports = {
         lat: 38.7645358,
         lng: -142.4730327,
         name: "Cozy Cabin",
-        description: "Tucked away in a secluded forest, this charming cabin offers the perfect retreat from the hustle and bustle of daily life. Surrounded by towering trees and the sounds of nature, the cabin features a cozy living room with a stone fireplace, a fully equipped kitchen, and two bedrooms with comfortable queen-sized beds. Step outside onto the private deck to enjoy your morning coffee while listening to the birds chirp and the rustling of the leaves. Whether you're hiking the nearby trails, stargazing under the clear night sky, or simply unwinding by the fire, this cabin is the ideal escape for nature lovers seeking peace and tranquility.",
+        description: "Tucked in a secluded forest, this charming cabin offers the perfect retreat from the noise of daily life. Surrounded by trees and the sounds of nature, the cabin features a cozy living room with a fireplace, a fully equipped kitchen, and two bedrooms.",
         price: 200,
       },
       {
@@ -69,7 +69,7 @@ module.exports = {
         lat: 79.7645358,
         lng: -100.4730327,
         name: "Lake Retreat",
-        description: "This stunning lake house sits right on the water, offering breathtaking views from every room. With a spacious deck, cozy living areas, and a fully equipped kitchen, it’s perfect for swimming, fishing, or simply relaxing by the water’s edge. A serene lakeside retreat.",
+        description: "This stunning lake house sits right on the water, offering breathtaking views from every room. With a spacious deck, cozy living areas, and a fully equipped kitchen, it is perfect for relaxing by the water. A serene lakeside retreat.",
         price: 320,
       },
       {
@@ -81,7 +81,7 @@ module.exports = {
         lat: 79.7645358,
         lng: -100.4730327,
         name: "New Heaven",
-        description: "This charming suburban home in New Haven features a spacious living room, a bright kitchen, and three cozy bedrooms. Enjoy the private backyard, perfect for outdoor gatherings, and take advantage of the quiet neighborhood, all while being close to downtown and local parks.",
+        description: "This charming suburban home features a spacious living room, a kitchen, and three bedrooms. Enjoy the private backyard, perfect for outdoor gatherings, and take advantage of the quiet neighborhood, all while being close to downtown and local parks.",
         price: 180,
       },
       {
@@ -93,7 +93,7 @@ module.exports = {
         lat: 79.7645358,
         lng: -100.4730327,
         name: "Boulder Bungalow",
-        description: "This quaint brick cottage in Boulder offers a cozy retreat with rustic charm. Featuring a warm living room, a fully equipped kitchen, and two bedrooms, it’s perfect for relaxing after a day of hiking. Enjoy mountain views from the backyard, just minutes from downtown.",
+        description: "This quaint brick cottage offers a retreat with rustic charm. Featuring a warm living room, a fully equipped kitchen, and two bedrooms, it is perfect for relaxing after a day of hiking. Enjoy mountain views from the backyard, just minutes from downtown.",
         price: 250,
       },
       {
@@ -105,7 +105,7 @@ module.exports = {
         lat: 79.7645358,
         lng: -100.4730327,
         name: "Fairytale Farm House",
-        description: "This secluded farmhouse offers peace and tranquility, surrounded by sprawling fields and nature. With a cozy living room, a rustic kitchen, and three comfortable bedrooms, it’s the perfect retreat. Enjoy quiet walks, stargazing, and the charm of country living.",
+        description: "This secluded farmhouse offers peace and tranquility, surrounded by sprawling fields and nature. With a cozy living room, a rustic kitchen, and three bedrooms, it is the perfect retreat. Enjoy quiet walks, stargazing, and the charm of country living.",
         price: 250,
       },
     ], { validate: true });
