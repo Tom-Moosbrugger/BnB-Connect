@@ -13,17 +13,202 @@ module.exports = {
     await SpotImage.bulkCreate([
       {
         spotId: 1,
-        url: "image1 url",
+        url: "https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 1,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 1,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 1,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 1,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 2,
+        url: "https://cdn.pixabay.com/photo/2022/01/26/04/47/house-6967908_1280.jpg",
         preview: true
       },
       {
         spotId: 2,
-        url: "image2 url",
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 2,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 2,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 2,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
         preview: false
       },
       {
         spotId: 3,
-        url: "image3 url",
+        url: "https://cdn.pixabay.com/photo/2017/11/16/19/29/cottage-2955582_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 3,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 3,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 3,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 3,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 4,
+        url: "https://cdn.pixabay.com/photo/2017/11/25/15/48/house-2977085_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 4,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 4,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 4,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 4,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 5,
+        url: "https://cdn.pixabay.com/photo/2013/10/09/02/27/lake-192990_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 5,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 5,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 5,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 5,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 6,
+        url: "https://cdn.pixabay.com/photo/2016/01/23/21/58/new-1158139_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 6,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 6,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 6,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 6,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 7,
+        url: "https://cdn.pixabay.com/photo/2016/08/16/03/39/home-1597079_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 7,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 7,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 7,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 7,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 8,
+        url: "https://cdn.pixabay.com/photo/2022/10/11/18/33/house-7514941_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 8,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 8,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 8,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 8,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
         preview: false
       },
     ], { validate: true });
