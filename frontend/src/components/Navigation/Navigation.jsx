@@ -16,6 +16,7 @@ const Navigation = ({ isLoaded }) => {
             </div>
             {isLoaded && (
            <div className='right-nav'>
+              {sessionUser && <p>Create a New Spot</p>}
               <ProfileButton user={sessionUser} />
            </div>
           )}

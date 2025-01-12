@@ -56,7 +56,6 @@ const ProfileButton = ({ user }) => {
                 <div className='user-logout'>
                   <button className='logout-button' onClick={logout}>Log Out</button>
                 </div>
-                
               </div>
             ) : (
               <div className='guest-dropdown'>
