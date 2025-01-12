@@ -25,7 +25,6 @@ form {
     justify-content: center;
     row-gap: 10px;
     width: 75%;
-    /* height: 75px; */
     height: 25%;
     margin: 10px 0;
 }
@@ -52,7 +51,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 75%;
+    width: 100%;
     padding: 20px 0;
     
 }
@@ -60,14 +59,6 @@ form {
 .login-button {
     width: 75%;
     height: 25px;
-    border: 1px solid black;
-    border-radius: 20px;
-    background: orange;
-}
-
-.login-button:hover {
-    background-color: white;
-    color: black;
 }
 
 .error-message {

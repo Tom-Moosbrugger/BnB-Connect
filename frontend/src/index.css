@@ -1,6 +1,20 @@
 /* TODO: Add sitewide styles */
 html {
     box-sizing: border-box;
+    font-family: "Montserrat", serif;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgb(168, 63, 24);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(255, 183, 0);
+    color: black;
 }
 
 ul, li {

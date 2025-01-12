@@ -54,16 +54,8 @@ form {
 }
 
 .signup-button {
-    width: 60%;
-    height: 25px;
-    border: 1px solid black;
-    border-radius: 20px;
-    background: orange;
-}
-
-.signup-button:hover {
-    background-color: orangered;
-    color: black;
+    width: 75%;
+    height: 25px; 
 }
 
 .error-message {

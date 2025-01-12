@@ -90,7 +90,7 @@ const SignupFormModal = () => {
                 </div>
                 <div className="signup-form-div">
                     <input 
-                    type='text'
+                    type='password'
                     required={true}
                     placeholder="Enter a password..."
                     value={password}
@@ -102,7 +102,7 @@ const SignupFormModal = () => {
                 </div>
                 <div className="signup-form-div">
                     <input 
-                    type='text'
+                    type='password'
                     required={true}
                     placeholder="Re-enter password..."
                     value={confirmPassword}

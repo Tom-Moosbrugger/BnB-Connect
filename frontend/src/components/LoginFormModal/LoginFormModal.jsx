@@ -42,7 +42,7 @@ const LoginFormModal = () => {
                 <div className="login-form-div">
                     <input 
                     className="login-form-input"                    
-                    type='text'
+                    type='password'
                     required={true}
                     placeholder="Enter your password..."
                     value={password}
