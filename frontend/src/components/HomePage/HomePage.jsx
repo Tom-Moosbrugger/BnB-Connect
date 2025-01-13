@@ -6,7 +6,7 @@ import './HomePage.css';
 
 const HomePage = () => {
     const dispatch = useDispatch();
-    const spots = useSelector(state => Object.values(state.spots));
+    const spots = useSelector(spotActions.selectSpotsArray);
 
     useEffect(() => {
         dispatch(spotActions.loadSpotsThunk());
@@ -15,14 +15,8 @@ const HomePage = () => {
     return (
         <div className='spot-preview-container'>
             {spots.map(spot => (
-                <SpotPreview key={spot.id} spot={{ 
-                    name: spot.name,
-                    city: spot.city, 
-                    state: spot.state,
-                    avgRating: spot.avgRating,
-                    previewImage: spot.previewImage,
-                    price: spot.price
-                }} />))}
+                <SpotPreview key={spot.id} spot={spot} />
+            ))}
         </div>
         
     );

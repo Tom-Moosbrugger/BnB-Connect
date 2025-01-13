@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
 import './SpotPreview.css';
 
-const SpotPreview = ({ spot: { name, city, state, avgRating, previewImage, price } }) => {
+const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, price }}) => {
+    const navigate = useNavigate();
+
     return (
-        <section className="spot-preview" title={name}>
+        <section className="spot-preview" title={name} onClick={() => navigate(`/spots/${id}`)}>
             <img className="spot-image" src={previewImage} alt={name} />
             <div className="spot-details">
                 <p>{city}, {state}</p>

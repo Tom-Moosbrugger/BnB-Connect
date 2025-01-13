@@ -1,4 +1,5 @@
 import { csrfFetch } from "./csrf"
+import { createSelector } from 'reselect';
 
 // action constants
 
@@ -24,6 +25,12 @@ export const loadSpotsThunk = () => async dispatch => {
 
     return response;
 }
+
+// selectors
+
+const selectSpots = state => state.spots
+
+export const selectSpotsArray = createSelector(selectSpots, (spots) => Object.values(spots));
 
 // reducer
 
