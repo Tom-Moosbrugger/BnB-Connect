@@ -1,7 +1,69 @@
-/* TODO: Add sitewide styles */
+a,
+article,
+body,
+button,
+div,
+fieldset,
+footer,
+form,
+h1,
+h2,
+header,
+html,
+i,
+img,
+input,
+label,
+li,
+main,
+nav,
+p,
+section,
+small,
+span,
+strong,
+textarea,
+time,
+ul {
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+  
+button,
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+input[type="text"],
+textarea {
+/*
+Get rid of native styling. Read more here:
+http://css-tricks.com/almanac/properties/a/appearance/
+*/
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+}
+
 html {
     box-sizing: border-box;
     font-family: "Montserrat", serif;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
 }
 
 button {
@@ -10,6 +72,7 @@ button {
     background: rgb(168, 63, 24);
     color: white;
     cursor: pointer;
+    text-align: center;
 }
 
 button:hover {
@@ -17,6 +80,6 @@ button:hover {
     color: black;
 }
 
-ul, li {
+ul {
     list-style: none;
 }
