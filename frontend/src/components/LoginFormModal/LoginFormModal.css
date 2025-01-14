@@ -11,6 +11,13 @@
     padding: 15px 0;
 }
 
+.login-wrapper h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+
+}
+
 form {
     display: flex;
     flex-direction: column;

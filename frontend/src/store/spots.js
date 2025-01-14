@@ -3,7 +3,9 @@ import { createSelector } from 'reselect';
 
 // action constants
 
-const LOAD_SPOTS = 'spots/loadSpots'
+const LOAD_SPOTS = 'spots/loadSpots';
+const UPDATE_SPOT = 'spots/updateSpot';
+const ADD_SPOT_REVIEWS = 'spots/addSpotReviews';
 
 // action functions
 
@@ -11,6 +13,21 @@ const loadSpots = (spots) => {
     return {
         type: LOAD_SPOTS,
         spots
+    }
+}
+
+const updateSpot = (spot) => {
+    return {
+        type: UPDATE_SPOT,
+        spot: spot
+    }
+}
+
+const addSpotReviews = (reviews, spotId) => {
+    return {
+        type: ADD_SPOT_REVIEWS,
+        spotId,
+        reviews
     }
 }
 
@@ -22,6 +39,26 @@ export const loadSpotsThunk = () => async dispatch => {
     const data = await response.json();
 
     dispatch(loadSpots(data.Spots));
+
+    return response;
+}
+
+export const getSpotDetailsThunk = (id) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/${id}`);
+
+    const data = await response.json();
+
+    dispatch(updateSpot(data));
+
+    return response;
+}
+
+export const getSpotReviewsThunk = (id) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/${id}/reviews`);
+
+    const data = await response.json();
+
+    dispatch(addSpotReviews(data.Reviews, id));
 
     return response;
 }
@@ -44,6 +81,12 @@ const spotsReducer = (state = {}, action) => {
 
             return newState;
         }
+        case UPDATE_SPOT:
+            return { ...state, [action.spot.id]: { ...state[action.spot.id], ...action.spot }};
+        case ADD_SPOT_REVIEWS: {
+            return { ...state, [action.spotId]: { ...state[action.spotId], reviews: action.reviews }};
+        }
+            
         default:
             return state;
     }

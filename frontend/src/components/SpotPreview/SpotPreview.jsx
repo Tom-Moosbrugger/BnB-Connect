@@ -7,14 +7,14 @@ const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, p
 
     return (
         <section className="spot-preview" title={name} onClick={() => navigate(`/spots/${id}`)}>
-            <img className="spot-image" src={previewImage} alt={name} />
-            <div className="spot-details">
+            <img className="spot-preview-image" src={previewImage} alt={name} />
+            <div className="spot-preview-details">
                 <p>{city}, {state}</p>
                 <p>
-                    <FaStar /> {avgRating}
+                    <FaStar /> {avgRating ? avgRating : 'New'}
                 </p>
             </div>
-            <p className="spot-price"><em>${price}</em> per night</p>
+            <p className="spot-preview-price"><em>${price}</em> night</p>
         </section>      
     );
 };
