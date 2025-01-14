@@ -11,8 +11,10 @@ const SpotDetails = () => {
     const { spotId } = useParams();
     const dispatch = useDispatch();
     const spot = useSelector(state => state.spots[spotId]);   
-    const reviews = useSelector(state => state.spots[spotId].reviews || []);
+    const reviews = useSelector(state => state.spots[spotId]?.reviews || []);
     const sessionUser = useSelector((state) => state.session.user);
+
+    console.log(reviews);
 
     useEffect(() => {
         dispatch(spotActions.getSpotDetailsThunk(spotId))
@@ -30,8 +32,8 @@ const SpotDetails = () => {
         <>
             <article className='spot-details'>
                 <header className='spot-details-header'>
-                    <h2>{spot.name}</h2>
-                    <h3>{spot.city}, {spot.state}, {spot.country}</h3>
+                    <h2>{spot?.name}</h2>
+                    <h3>{spot?.city}, {spot?.state}, {spot?.country}</h3>
                 </header>
                 <section className='spot-details-images'>
                     <SpotImagesSection spotImages={spot?.SpotImages}/>
@@ -39,7 +41,7 @@ const SpotDetails = () => {
                 <section className='spot-details-information'>
                     <div className='spot-details-description'>
                         <h2>Hosted by {spot.Owner?.firstName} {spot.Owner?.lastName}</h2>
-                        <p>{spot.description}</p>
+                        <p>{spot?.description}</p>
                     </div>
                     <div className='spot-details-reserve'>
                         <ReserveSpot spot={spot} />

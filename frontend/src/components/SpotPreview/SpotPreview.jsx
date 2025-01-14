@@ -11,7 +11,7 @@ const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, p
             <div className="spot-preview-details">
                 <p>{city}, {state}</p>
                 <p>
-                    <FaStar /> {avgRating ? avgRating : 'New'}
+                    <FaStar /> {avgRating ? avgRating.toFixed(1) : 'New'}
                 </p>
             </div>
             <p className="spot-preview-price"><em>${price}</em> night</p>

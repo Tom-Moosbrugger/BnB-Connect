@@ -84,7 +84,24 @@ const spotsReducer = (state = {}, action) => {
         case UPDATE_SPOT:
             return { ...state, [action.spot.id]: { ...state[action.spot.id], ...action.spot }};
         case ADD_SPOT_REVIEWS: {
-            return { ...state, [action.spotId]: { ...state[action.spotId], reviews: action.reviews }};
+            const reviews = [...action.reviews].sort((a, b) => {
+                const dateA = new Date(a.updatedAt);
+                const dateB = new Date(b.updatedAt);
+    
+                return dateB - dateA;
+            });
+
+            for (let review of reviews) {
+                let monthYear = new Date(review.updatedAt);
+                
+                review.dateString = monthYear.toLocaleDateString("en-US", {
+                    timeZone: 'UTC',
+                    month: "long",
+                    year: "numeric"
+                  });
+            }
+
+            return { ...state, [action.spotId]: { ...state[action.spotId], reviews }};
         }
             
         default:

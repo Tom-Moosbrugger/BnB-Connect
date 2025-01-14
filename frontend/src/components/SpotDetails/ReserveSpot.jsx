@@ -10,11 +10,11 @@ const ReserveSpot = ({ spot: { price, avgStarRating, numReviews} }) => {
     let content = !avgStarRating ? (
         <p><FaStar /> New</p>
     ) : (
-        <p className="spot-details-reviews">
+        <p className="spot-details-numreviews">
             <FaStar /> 
-            <span> {avgStarRating}</span> 
+            <span> {avgStarRating.toFixed(1)}</span> 
             <span id="dot-span"><GoDotFill /></span> 
-            <span> {numReviews} reviews</span>
+            <span> {numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
         </p>
     );
 

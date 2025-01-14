@@ -1,3 +1,5 @@
+/* spot article */
+
 .spot-details {
     border-bottom: 1px solid grey;
     display: flex;
@@ -56,6 +58,8 @@
     grid-column: 4 / 5;
     grid-row: 2 / 3;
 }
+
+/* spot information and reserve button */
 
 .spot-details-information {
     column-gap: 10px;
