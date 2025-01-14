@@ -2,8 +2,8 @@ import { FaStar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
 const SpotReviews = ({ reviews, user, spot: { numReviews, avgStarRating} }) => {
-    
-    
+    console.log(reviews);
+    console.log(user);
     
     let content = !avgStarRating ? (
         <p><FaStar /> New</p>
@@ -18,7 +18,9 @@ const SpotReviews = ({ reviews, user, spot: { numReviews, avgStarRating} }) => {
     
     
     return (
-        <h1>reviews</h1>
+       <>
+        {content}
+       </>
     )
 }
 
