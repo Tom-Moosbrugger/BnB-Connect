@@ -1,0 +1,21 @@
+.pricing-and-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spot-details-reviews {
+    display: flex;
+    column-gap: 5px;
+}
+
+#dot-span {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserve-button {
+    height: 30px;
+}
