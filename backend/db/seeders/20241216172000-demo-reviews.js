@@ -14,18 +14,6 @@ module.exports = {
     await Review.bulkCreate([
       {
         userId: 1,
-        spotId: 1,
-        review: "Great location, cozy space. Only downside was the noisy street at night.",
-        stars: 3,
-      },
-      {
-        userId: 1,
-        spotId: 2,
-        review: "Nice place, but the AC did not work well. Was a bit too warm for my stay.",
-        stars: 3,
-      },
-      {
-        userId: 1,
         spotId: 3,
         review: "Good spot with great amenities. Could use more pillows and blankets, though.",
         stars: 4,
@@ -35,6 +23,18 @@ module.exports = {
         spotId: 4,
         review: "Comfortable and stylish. A bit small for the price, but overall good value.",
         stars: 4,
+      },
+      {
+        userId: 1,
+        spotId: 5,
+        review: "Great location, cozy space. Only downside was the noisy street at night.",
+        stars: 3,
+      },
+      {
+        userId: 1,
+        spotId: 6,
+        review: "Nice place, but the AC did not work well. Was a bit too warm for my stay.",
+        stars: 3,
       },
       {
         userId: 2,
@@ -50,13 +50,13 @@ module.exports = {
       },
       {
         userId: 2,
-        spotId: 3,
+        spotId: 5,
         review: "Disappointing. The place was not cleaned properly and had a musty smell.",
         stars: 2,
       },
       {
         userId: 2,
-        spotId: 4,
+        spotId: 6,
         review: "Cozy and quiet spot. Could use better lighting in the bathroom, but great overall",
         stars: 3,
       },
