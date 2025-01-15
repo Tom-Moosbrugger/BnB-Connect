@@ -27,12 +27,16 @@
     margin: 0px 5px;
 }
 
+.spot-preview-details p {
+    padding-top: 10px;
+}
+
 .spot-preview-price {
     margin: 0px 5px;
 }
 
 em {
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: bold;
 }
