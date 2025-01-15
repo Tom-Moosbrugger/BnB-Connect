@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaBed } from "react-icons/fa";
 import ProfileButton from './ProfileButton';
@@ -16,7 +16,7 @@ const Navigation = ({ isLoaded }) => {
             </div>
             {isLoaded && (
            <div className='right-nav'>
-              {sessionUser && <p>Create a New Spot</p>}
+              {sessionUser && <NavLink to='/spots/new'><span>Create a New Spot</span></NavLink>}
               <ProfileButton user={sessionUser} />
            </div>
           )}

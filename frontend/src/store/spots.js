@@ -4,6 +4,7 @@ import { createSelector } from 'reselect';
 // action constants
 
 const LOAD_SPOTS = 'spots/loadSpots';
+const CREATE_SPOT = 'spots/createSpot'
 const UPDATE_SPOT = 'spots/updateSpot';
 const ADD_SPOT_REVIEWS = 'spots/addSpotReviews';
 
@@ -16,10 +17,17 @@ const loadSpots = (spots) => {
     }
 }
 
+const createSpot = (spot) => {
+    return {
+        type: CREATE_SPOT,
+        spot
+    }
+}
+
 const updateSpot = (spot) => {
     return {
         type: UPDATE_SPOT,
-        spot: spot
+        spot
     }
 }
 
@@ -53,6 +61,30 @@ export const getSpotDetailsThunk = (id) => async dispatch => {
     return response;
 }
 
+export const createSpotThunk = (spot) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/`, {
+        method: 'POST',
+        body: JSON.stringify(spot)
+    });
+
+    const data = await response.json();
+
+    dispatch(createSpot(data));
+
+    return data;
+}
+
+export const addSpotImages = (spotImages, id) => async () => {
+    for (let image of spotImages) {
+        await csrfFetch(`/api/spots/${id}/images`, {
+            method: 'POST',
+            body: JSON.stringify(image)
+        });
+    }
+
+    return;
+}
+
 export const getSpotReviewsThunk = (id) => async dispatch => {
     const response = await csrfFetch(`/api/spots/${id}/reviews`);
 
@@ -83,6 +115,8 @@ const spotsReducer = (state = {}, action) => {
         }
         case UPDATE_SPOT:
             return { ...state, [action.spot.id]: { ...state[action.spot.id], ...action.spot }};
+        case CREATE_SPOT:
+            return { ...state, [action.spot.id]: action.spot};
         case ADD_SPOT_REVIEWS: {
             const reviews = [...action.reviews].sort((a, b) => {
                 const dateA = new Date(a.updatedAt);

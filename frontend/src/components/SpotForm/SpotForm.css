@@ -1,0 +1,130 @@
+.spot-form-container {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px auto;
+    width: 60%
+}
+
+.spot-form-container section {
+    border-bottom: 1px solid grey;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+#submit-spot-form {
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+#submit-spot-button {
+    width: 200px;
+    height: 30px;
+}
+
+
+.spot-form-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.spot-form-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.spot-form-container header {
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.spot-form-container label {
+    font-weight: bold;
+    padding-left: 5px;
+}   
+
+.spot-form-container input {
+    border: 1px solid black;
+    border-radius: 20px;
+    text-indent: 5px;
+    width: 100%;
+    height: 25px;
+}
+
+.spot-form-container textarea {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 100%;
+    padding: 12px;
+}
+
+.spot-form-input {
+    padding: 10px 0;
+  
+}
+
+#city-state, #lat-long {
+    display: flex;
+    flex-direction: row
+}
+
+#city, #long {
+    flex: 2 1 0;
+}
+
+#state, #lat {
+    flex: 1 1 0;
+}
+
+#price {
+    display: flex;
+    flex-direction: row;
+}
+
+#dollar-sign {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.comma {
+    font-size: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 5%
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.error-message-container {
+    height: 30px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.spot-form-test-info {
+    cursor: pointer;
+    color: red;
+    display: flex;
+    align-items: center;
+    height: 25px;
+}

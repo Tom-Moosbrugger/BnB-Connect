@@ -26,7 +26,7 @@ const LoginFormModal = () => {
     
 
     return (
-        <div  className="login-wrapper">
+        <div className="login-wrapper">
             <h2>Log In</h2>
             <form onSubmit={handleSubmit}>
                 <div className="login-form-div">
@@ -55,7 +55,6 @@ const LoginFormModal = () => {
                 <div className="login-button-div">
                     <button className="login-button">Log in</button>
                 </div>
-               
             </form>
         </div>
     );

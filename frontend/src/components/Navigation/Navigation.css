@@ -26,6 +26,16 @@
     column-gap: 15px;
 }
 
+.right-nav a {
+    display: flex;
+    align-items: center;
+    color: rgb(168, 63, 24)
+}
+
+.right-nav a:hover {
+    color: rgb(255, 183, 0);
+}
+
 .profile-buttons {
     border: 2px solid rgb(168, 63, 24);
     border-radius: 50px;
