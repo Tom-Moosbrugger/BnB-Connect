@@ -36,7 +36,7 @@ form {
     margin: 10px 0;
 }
 
-.error-div {
+.login-form-error-div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +59,7 @@ form {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
     
 }
 
@@ -87,6 +87,15 @@ form {
     opacity: .5;
  }
 
-.error-message {
+.login-form-error-message {
+    font-size: 14px;
     color: red;
+}
+
+#login-form-demo-user {
+    cursor: pointer;
+    color: red;
+    display: flex;
+    align-items: center;
+    height: 25px;
 }

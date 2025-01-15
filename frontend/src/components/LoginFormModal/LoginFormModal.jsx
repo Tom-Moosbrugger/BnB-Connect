@@ -23,6 +23,15 @@ const LoginFormModal = () => {
                 if (data?.errors) setErrors(data.errors);
             });
     };
+
+    const loginDemo = async () =>  {
+        return dispatch(loginThunk({ credential: 'demo@user.io', password: 'password' }))
+            .then(closeModal)
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data?.errors) setErrors(data.errors);
+        });
+    };
     
 
     return (
@@ -49,8 +58,8 @@ const LoginFormModal = () => {
                     onChange={e => setPassword(e.target.value)}
                     />
                 </div>
-                <div className="error-div">
-                    {errors.credential && <p className="error-message">*{errors.credential}</p>}
+                <div className="login-form-error-div">
+                    {errors.credential && <p className="login-form-error-message">*{errors.credential}</p>}
                 </div>
                 <div className="login-button-div">
                     <button 
@@ -60,6 +69,7 @@ const LoginFormModal = () => {
                         Log in
                     </button>
                 </div>
+                <span onClick={loginDemo} id="login-form-demo-user">Log in as a Demo User</span>
             </form>
         </div>
     );

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { BsPersonCircle } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 import * as sessionActions from '../../store/session';
@@ -12,6 +12,7 @@ const ProfileButton = ({ user }) => {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const ulRef = useRef();
+    const navigate = useNavigate();
 
     const toggleMenu = (e) => {
         e.stopPropagation(); // Keep click from bubbling up to document and triggering closeMenu
@@ -35,6 +36,7 @@ const ProfileButton = ({ user }) => {
     const logout = (e) => {
         e.preventDefault();
         dispatch(sessionActions.logoutThunk());
+        navigate('/');
     };
 
     const closeMenu = () => setShowMenu(false);
@@ -64,13 +66,13 @@ const ProfileButton = ({ user }) => {
             ) : (
               <div className='guest-dropdown'>
                   <OpenModalButton
-                    buttonText="Log In"
-                    modalComponent={<LoginFormModal />}
+                    buttonText="Sign Up"
+                    modalComponent={<SignupFormModal />}
                     onButtonClick={closeMenu}
                   />
                   <OpenModalButton
-                    buttonText="Sign Up"
-                    modalComponent={<SignupFormModal />}
+                    buttonText="Log In"
+                    modalComponent={<LoginFormModal />}
                     onButtonClick={closeMenu}
                   />
               </div>

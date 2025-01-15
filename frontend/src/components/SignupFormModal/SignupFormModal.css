@@ -2,6 +2,7 @@
     font-family: sans-serif;
     box-sizing: border-box;
     border: 2px solid black;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +16,6 @@
     font-size: 20px;
     font-weight: bold;
     padding: 10px 0;
-
 }
 
 form {
@@ -34,12 +34,12 @@ form {
     margin: 10px 0;
 }
 
-.error-div {
+.signup-form-error-div {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    width: 100%;
+    width: 75%;
     height: 25px;
 }
 
@@ -65,6 +65,21 @@ form {
     height: 25px; 
 }
 
-.error-message {
+.disabled {
+    background-color: rgb(65, 62, 62);
+    color: gray;
+    cursor: not-allowed;
+    opacity: .5;
+ }
+ 
+ .disabled:hover {
+     background-color: rgb(65, 62, 62);
+     color: gray;
+     cursor: not-allowed;
+     opacity: .5;
+  }
+
+.signup-form-error-message {
+    font-size: 14px;
     color: red;
 }
