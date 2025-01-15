@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
 import './SpotPreview.css';
 
-const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, price }}) => {
+const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, price }, componentSource }) => {
     const navigate = useNavigate();
 
     return (
@@ -14,7 +14,9 @@ const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, p
                     <FaStar /> {avgRating ? avgRating.toFixed(1) : 'New'}
                 </p>
             </div>
-            <p className="spot-preview-price"><em>${price}</em> night</p>
+            <div className="spot-preview-price">
+                <p><em>${price}</em> night</p>
+            </div>
         </section>      
     );
 };

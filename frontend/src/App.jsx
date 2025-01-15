@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet, Navigate } from 'react-rou
 import Navigation from './components/Navigation';
 import HomePage from './components/HomePage/HomePage';
 import SpotDetails from './components/SpotDetails/SpotDetails';
+import ManageSpots from './components/ManageSpots';
 import { CreateSpotForm } from './components/SpotForm/CreateSpotForm';
 import * as sessionActions from './store/session';
 
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
     },
     {
       path: '/spots/current',
-      element: <h1>Manage Your Spots</h1>
+      element: <ManageSpots />
     },
     {
       path: '/spots/new',

@@ -12,7 +12,7 @@
 .spot-preview:hover {
     transform: scale(1.05); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
+}
 
 .spot-preview-image {
     width: 100%;
@@ -28,15 +28,16 @@
 }
 
 .spot-preview-details p {
-    padding-top: 10px;
+    margin-top: 20px;
 }
 
 .spot-preview-price {
-    margin: 0px 5px;
+    font-size: 16px;
+    margin: 20px 5px;
 }
 
 em {
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: bold;
 }

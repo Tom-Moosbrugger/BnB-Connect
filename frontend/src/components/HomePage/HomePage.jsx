@@ -13,11 +13,11 @@ const HomePage = () => {
     }, [dispatch]);
 
     return (
-        <div className='spot-preview-container'>
+        <article className='spot-preview-container'>
             {spots.map(spot => (
-                <SpotPreview key={spot.id} spot={spot} />
+                <SpotPreview key={spot.id} spot={spot} componentSource='home' />
             ))}
-        </div>
+        </article>
         
     );
 }

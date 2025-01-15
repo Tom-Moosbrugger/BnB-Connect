@@ -4,6 +4,7 @@ import { csrfFetch } from "./csrf";
 
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
+const ADD_USER_SPOTS = 'session/addUserSpots';
 
 // regular actions
 
@@ -19,6 +20,13 @@ const removeUser = () => {
         type: REMOVE_USER
     }
 };
+
+const addUserSpots = (spots) => {
+    return {
+        type: ADD_USER_SPOTS,
+        spots
+    }
+}
 
 // thunk actions
 
@@ -66,6 +74,18 @@ export const signupUserThunk = (userInfo) => async dispatch => {
     return response;
 }
 
+export const addUserSpotsThunk = () => async dispatch => {
+    const response = await csrfFetch('/api/spots/current');
+
+    const data = await response.json();
+
+    // console.log('USER SPOTS', data.Spots);
+
+    dispatch(addUserSpots(data.Spots));
+
+    return response;
+}
+
 // reducer
 
 const sessionReducer = (state = { user: null }, action) => {
@@ -74,6 +94,8 @@ const sessionReducer = (state = { user: null }, action) => {
             return { ...state, user: action.user };
         case REMOVE_USER: 
             return { ...state, user: null };
+        case ADD_USER_SPOTS:
+            return {...state, user: { ...state.user, spots: action.spots }}
         default:
             return state;
     }
