@@ -5,6 +5,7 @@ import { csrfFetch } from "./csrf";
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 const ADD_USER_SPOTS = 'session/addUserSpots';
+const DELETE_USER_SPOT = 'session/deleteUserSpot';
 
 // regular actions
 
@@ -25,6 +26,13 @@ const addUserSpots = (spots) => {
     return {
         type: ADD_USER_SPOTS,
         spots
+    }
+}
+
+export const deleteUserSpot = (spotId) => {
+    return {
+        type: DELETE_USER_SPOT,
+        spotId
     }
 }
 
@@ -79,8 +87,6 @@ export const addUserSpotsThunk = () => async dispatch => {
 
     const data = await response.json();
 
-    // console.log('USER SPOTS', data.Spots);
-
     dispatch(addUserSpots(data.Spots));
 
     return response;
@@ -96,6 +102,11 @@ const sessionReducer = (state = { user: null }, action) => {
             return { ...state, user: null };
         case ADD_USER_SPOTS:
             return {...state, user: { ...state.user, spots: action.spots }}
+        case DELETE_USER_SPOT:
+            return { 
+                ...state, 
+                user: { ...state.user, spots: state.user.spots.filter(spot => spot.id !== action.spotId) } 
+            };
         default:
             return state;
     }

@@ -12,13 +12,7 @@
     grid-template-rows: 2fr .5fr .5fr;
     margin-top: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease;
     cursor: pointer;
-}
-
-.spot-preview:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .spot-preview-image {
@@ -60,4 +54,14 @@ em {
 .spot-preview-update-delete button {
     height: 30px;
     width: 35%;
+}
+
+.home {
+    transition: transform 0.3s ease;
+
+}
+
+.home:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

@@ -1,5 +1,7 @@
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
+import OpenModalButton from '../OpenModalButton';
+import DeleteSpotModal from '../DeleteSpotModal';
 import './SpotPreview.css';
 
 const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, price }, componentSource }) => {
@@ -11,7 +13,11 @@ const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, p
     } 
 
     return (
-        <section className="spot-preview" title={name} onClick={() => navigate(`/spots/${id}`)}>
+        <section 
+        className={componentSource === 'home' ? `spot-preview home` : `spot-preview`} 
+        title={name} 
+        onClick={() => navigate(`/spots/${id}`)}
+        >
             <img className="spot-preview-image" src={previewImage} alt={name} />
             <div className="spot-preview-details">
                 <p>{city}, {state}</p>
@@ -25,7 +31,10 @@ const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, p
             {componentSource === 'manageSpots' && 
             <div className='spot-preview-update-delete'>
                 <button onClick={handleNavigate}>Update</button>
-                <button>Delete</button>
+                <OpenModalButton
+                 buttonText="Delete"
+                 modalComponent={<DeleteSpotModal spotId={id}/>}
+                />
             </div>}
         </section>      
     );

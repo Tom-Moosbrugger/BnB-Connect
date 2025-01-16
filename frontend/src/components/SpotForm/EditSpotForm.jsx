@@ -1,7 +1,5 @@
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react';
-import {  } from 'react-router-dom';
 
 import SpotForm  from './SpotForm';
 

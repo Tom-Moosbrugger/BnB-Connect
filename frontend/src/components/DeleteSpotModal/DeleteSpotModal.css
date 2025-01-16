@@ -1,0 +1,33 @@
+.delete-spot-modal {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px 40px;
+}
+
+.delete-spot-modal header {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.delete-spot-modal div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding-bottom: 10px;
+}
+
+.delete-spot-modal button {
+    height: 30px;
+}
+
+#no {
+    background-color: grey;
+}
+
+#no:hover {
+    color: white;
+}

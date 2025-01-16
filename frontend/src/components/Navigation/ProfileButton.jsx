@@ -57,7 +57,7 @@ const ProfileButton = ({ user }) => {
                   <span>{user.email}</span>
                 </div>
                 <div className='user-spots'>
-                  <NavLink to='/spots/current'>Manage Spots</NavLink>
+                  <NavLink onClick={closeMenu} to='/spots/current'>Manage Spots</NavLink>
                 </div>
                 <div className='user-logout'>
                   <button className='logout-button' onClick={logout}>Log Out</button>

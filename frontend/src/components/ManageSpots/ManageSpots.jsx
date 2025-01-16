@@ -20,11 +20,13 @@ const ManageSpots = () => {
 
     if (!sessionUser || !sessionUser?.spots) return <h2>Loading...</h2>
 
+    console.log('sessionUser.Spots', sessionUser.spots)
+
     return (
         <>
             <header className="manage-spots-header">
                 <h2>Manage Your Spots</h2>
-                <button onClick={() => navigate('/spots/new')}>Create a New Spot</button>
+                {sessionUser.spots.length === 0 && <button onClick={() => navigate('/spots/new')}>Create a New Spot</button>}
             </header>
             <article className='spot-preview-container'>
                 {sessionUser.spots.map(spot => (

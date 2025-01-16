@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { SiComma } from "react-icons/si";
 import { FiDollarSign } from "react-icons/fi";
 import * as spotActions from '../../store/spots';
 import './SpotForm.css';
 
 const SpotForm = ({ formData, formType }) => {
+    const { spotId } = useParams();
     const [country, setCountry] = useState(formData?.country || '');
     const [address, setAddress] = useState(formData?.address || '');
     const [city, setCity] = useState(formData?.city || '');
@@ -65,9 +66,9 @@ const SpotForm = ({ formData, formType }) => {
 
         if (!price) validationErrors.price = 'Price is required';
 
-        if (!previewImage) {
+        if (formType === 'createSpot' && !previewImage) {
             validationErrors.previewImage = 'Preview image is required';
-        } else if (!previewImage.endsWith('.png') && !previewImage.endsWith('.jpg') && !previewImage.endsWith('.jpeg')) {
+        } else if (formType === 'createSpot' && !previewImage.endsWith('.png') && !previewImage.endsWith('.jpg') && !previewImage.endsWith('.jpeg')) {
             validationErrors.previewImage = 'Image URL must end in .png, .jpg, .jpeg';
         }
 
@@ -77,7 +78,7 @@ const SpotForm = ({ formData, formType }) => {
         if (otherImage4 && !otherImage4.endsWith('.png') && !otherImage4.endsWith('.jpg') && !otherImage4.endsWith('.jpeg')) validationErrors.otherImage4 = 'Image URL must end in .png, .jpg, .jpeg';
 
         setErrors(validationErrors);
-    }, [country, address, city, state, lat, lng, description, name, price, previewImage, otherImage1, otherImage2, otherImage3, otherImage4]);
+    }, [country, address, city, state, lat, lng, description, name, price, previewImage, otherImage1, otherImage2, otherImage3, otherImage4, formType]);
 
     const fillTestInfo = () => {
         setCountry('United States of America');
@@ -125,13 +126,22 @@ const SpotForm = ({ formData, formType }) => {
             const newSpot = await dispatch(spotActions.createSpotThunk(spot))
                 .catch(async (res) => {
                     const data = await res.json();
-                    if (data?.errors) return setErrors(data.error);
+                    if (data?.errors) return setErrors(data.errors);
                 }
             );
 
-            await dispatch(spotActions.addSpotImages(spotImages, newSpot.id));
+            await dispatch(spotActions.addSpotImagesThunk(spotImages, newSpot.id));
             
             navigate(`/spots/${newSpot.id}`);
+        } else {
+            await dispatch(spotActions.editSpotThunk(spot, spotId))
+                .catch(async (res) => {
+                    const data = await res.json();
+                    if (data?.errors) return setErrors(data.errors);
+                }
+            );
+
+            navigate(`/spots/${spotId}`);
         }
     }
 
@@ -318,9 +328,8 @@ const SpotForm = ({ formData, formType }) => {
                     </div>
                 </section>}
                 <section id="submit-spot-form">
-                    {formType === 'createSpot' && <button id="submit-spot-button">Create Spot</button>}
-                    {formType === 'editSpot' && <button id="submit-spot-button">Update your Spot</button>}
-                    
+                    {formType === 'createSpot' && <button type='submit' id="submit-spot-button">Create Spot</button>}
+                    {formType === 'editSpot' && <button type='submit' id="submit-spot-button">Update your Spot</button>}
                 </section>
             </form>
         </article>

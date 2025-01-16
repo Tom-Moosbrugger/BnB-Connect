@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { loginThunk } from "../../store/session";
+import * as sessionActions from '../../store/session'
 import { useModalContext } from "../../context/Modal";
 import './LoginFormModal.css';
 
@@ -16,7 +16,7 @@ const LoginFormModal = () => {
 
         setErrors({});
 
-        return dispatch(loginThunk({ credential, password }))
+        return dispatch(sessionActions.loginThunk({ credential, password }))
             .then(closeModal)
             .catch(async (res) => {
                 const data = await res.json();
@@ -25,7 +25,7 @@ const LoginFormModal = () => {
     };
 
     const loginDemo = async () =>  {
-        return dispatch(loginThunk({ credential: 'demo@user.io', password: 'password' }))
+        return dispatch(sessionActions.loginThunk({ credential: 'demo@user.io', password: 'password' }))
             .then(closeModal)
             .catch(async (res) => {
                 const data = await res.json();

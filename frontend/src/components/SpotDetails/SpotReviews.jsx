@@ -2,8 +2,6 @@ import { FaStar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
 const SpotReviews = ({ reviews, user, spot: { numReviews, avgStarRating, Owner} }) => {
-    if (user && Owner) {
-    }
 
     let content = reviews.length === 0 ? (
         <section className="review-details">
