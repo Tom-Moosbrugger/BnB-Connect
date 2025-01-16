@@ -298,8 +298,6 @@ router.get('/', validateQueryParams, async (req, res, next) => {
     query.limit = size;
     query.offset = size * (page - 1);
 
-    console.log(page, size, minLat, maxLat, minLng, maxLng, minPrice, maxPrice , query.offset);
-
     const spots = await Spot.findAll( {
         query,
         include: [
