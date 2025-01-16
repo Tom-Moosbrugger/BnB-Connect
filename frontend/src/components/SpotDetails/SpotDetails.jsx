@@ -26,19 +26,27 @@ const SpotDetails = () => {
         return <h2>Loading...</h2>;
     }
 
+    if (!spot.avgStarRating) {
+        return <h2>Loading...</h2>;
+    }
+
+    if (!reviews) {
+        return <h2>Loading...</h2>;
+    }
+
     return (
         <>
             <article className='spot-details'>
                 <header className='spot-details-header'>
-                    <h2>{spot?.name}</h2>
-                    <h3>{spot?.city}, {spot?.state}, {spot?.country}</h3>
+                    <h2>{spot.name}</h2>
+                    <h3>{spot.city}, {spot.state}, {spot.country}</h3>
                 </header>
                 <section className='spot-details-images'>
-                    <SpotImagesSection spotImages={spot?.SpotImages}/>
+                    <SpotImagesSection spotImages={spot.SpotImages}/>
                 </section>
                 <section className='spot-details-information'>
                     <div className='spot-details-description'>
-                        <h2>Hosted by {spot.Owner?.firstName} {spot.Owner?.lastName}</h2>
+                        <h2>Hosted by {spot.Owner.firstName} {spot.Owner.lastName}</h2>
                         <p>{spot?.description}</p>
                     </div>
                     <div className='spot-details-reserve'>
