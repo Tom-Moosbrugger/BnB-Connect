@@ -16,7 +16,7 @@ const SpotReviews = ({ reviews, user, spot: { numReviews, avgStarRating, Owner} 
                     <FaStar /> 
                     <span> {+avgStarRating.toFixed(1)}</span> 
                     <span id="dot-span"><GoDotFill /></span> 
-                    <span> {numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
+                    <span> {+numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
                 </p>
                 {user && user?.id !== Owner?.id && <button>Post Your Review</button>}
             </section>

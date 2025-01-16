@@ -14,7 +14,7 @@ const ReserveSpot = ({ spot: { price, avgStarRating, numReviews} }) => {
             <FaStar /> 
             <span> {+avgStarRating.toFixed(1)}</span> 
             <span id="dot-span"><GoDotFill /></span> 
-            <span> {numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
+            <span> {+numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
         </p>
     );
 
