@@ -14,7 +14,7 @@ const SpotReviews = ({ reviews, user, spot: { numReviews, avgStarRating, Owner} 
             <section>
                 <p className="spot-details-numreviews">
                     <FaStar /> 
-                    <span> {+avgStarRating.toFixed(1)}</span> 
+                    <span> {avgStarRating.toString().slice(0, 3)}</span> 
                     <span id="dot-span"><GoDotFill /></span> 
                     <span> {+numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
                 </p>
