@@ -123,7 +123,7 @@ export const deleteSpotThunk = (spotId) => async dispatch => {
 
     dispatch(deleteSpot(spotId));
 
-    return;
+    return response;
 }
 
 // selectors
@@ -150,6 +150,7 @@ const spotsReducer = (state = {}, action) => {
             return { ...state, [action.spot.id]: { ...state[action.spot.id], ...action.spot }};
         case DELETE_SPOT: {
             const { [action.spotId]: _, ...newState } = state;
+            console.log(_);
             return newState;
         }  
         case ADD_SPOT_REVIEWS: {
