@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import SpotPreview from "../SpotPreview";
 import * as sessionActions from '../../store/session';
-
+import './ManageSpots.css';
 
 /* 
-
-refactor the spotPreview to only render update/delete functionality if it's in manage spots
     add update and delete
 */
 
 const ManageSpots = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
@@ -23,8 +23,8 @@ const ManageSpots = () => {
     return (
         <>
             <header className="manage-spots-header">
-                <h2>Manage Spots</h2>
-                <button>Create a Spot</button>
+                <h2>Manage Your Spots</h2>
+                <button onClick={() => navigate('/spots/new')}>Create a New Spot</button>
             </header>
             <article className='spot-preview-container'>
                 {sessionUser.spots.map(spot => (

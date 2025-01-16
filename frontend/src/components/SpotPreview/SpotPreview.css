@@ -1,3 +1,10 @@
+.spot-preview-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    margin: 20px 30px;
+}
+
 .spot-preview {
     border: 1px solid grey;
     border-radius: 20px;
@@ -24,7 +31,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0px 5px;
+    margin: 0px 10px;
 }
 
 .spot-preview-details p {
@@ -33,11 +40,24 @@
 
 .spot-preview-price {
     font-size: 16px;
-    margin: 20px 5px;
+    margin: 20px 10px;
 }
 
 em {
     font-size: 16px;
     font-style: normal;
     font-weight: bold;
+}
+
+.spot-preview-update-delete {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.spot-preview-update-delete button {
+    height: 30px;
+    width: 35%;
 }

@@ -14,8 +14,6 @@ const SpotDetails = () => {
     const reviews = useSelector(state => state.spots[spotId]?.reviews || []);
     const sessionUser = useSelector((state) => state.session.user);
 
-    console.log(reviews);
-
     useEffect(() => {
         dispatch(spotActions.getSpotDetailsThunk(spotId))
     }, [dispatch, spotId]);

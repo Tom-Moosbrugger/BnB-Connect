@@ -69,7 +69,6 @@
 
 .spot-form-input {
     padding: 10px 0;
-  
 }
 
 #city-state, #lat-long {
@@ -94,6 +93,10 @@
     display: flex;
     align-items: center;
     font-size: 16px;
+}
+
+#submit-spot-button {
+    height: 30px;
 }
 
 .comma {

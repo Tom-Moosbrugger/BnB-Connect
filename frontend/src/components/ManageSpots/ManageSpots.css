@@ -1,0 +1,16 @@
+.manage-spots-header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin: 20px 35px 0;
+}
+
+.manage-spots-header h2{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.manage-spots-header button{
+    width: 240px;
+    height: 30px;
+}

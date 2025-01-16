@@ -1,6 +1,6 @@
-import { SpotForm } from "./SpotForm";
+import SpotForm from "./SpotForm";
 
-export const CreateSpotForm = () => {
+const CreateSpotForm = () => {
     const formData = {
         country: '',
         address: '',
@@ -16,3 +16,5 @@ export const CreateSpotForm = () => {
         <SpotForm formData={formData} formType='createSpot'/>
     )
 }
+
+export default CreateSpotForm;

@@ -3,8 +3,6 @@ import { GoDotFill } from "react-icons/go";
 
 const SpotReviews = ({ reviews, user, spot: { numReviews, avgStarRating, Owner} }) => {
     if (user && Owner) {
-        console.log('user id:', user.id)
-        console.log('Owner id:', Owner.id)
     }
 
     let content = reviews.length === 0 ? (

@@ -6,7 +6,7 @@ import { FiDollarSign } from "react-icons/fi";
 import * as spotActions from '../../store/spots';
 import './SpotForm.css';
 
-export const SpotForm = ({ formData, formType }) => {
+const SpotForm = ({ formData, formType }) => {
     const [country, setCountry] = useState(formData?.country || '');
     const [address, setAddress] = useState(formData?.address || '');
     const [city, setCity] = useState(formData?.city || '');
@@ -137,7 +137,8 @@ export const SpotForm = ({ formData, formType }) => {
 
     return (
         <article className="spot-form-container">
-            <h2>Create a new Spot</h2>
+            {formType === 'createSpot' && <h2>Create a new Spot</h2>}
+            {formType === 'editSpot' && <h2>Update your Spot</h2>}
             <div className="spot-form-test-info">
                 <span onClick={fillTestInfo}>Fill in Test Information</span>
             </div>
@@ -317,9 +318,13 @@ export const SpotForm = ({ formData, formType }) => {
                     </div>
                 </section>}
                 <section id="submit-spot-form">
-                    <button id="submit-spot-button">Create Spot</button>
+                    {formType === 'createSpot' && <button id="submit-spot-button">Create Spot</button>}
+                    {formType === 'editSpot' && <button id="submit-spot-button">Update your Spot</button>}
+                    
                 </section>
             </form>
         </article>
     );
 };
+
+export default SpotForm;

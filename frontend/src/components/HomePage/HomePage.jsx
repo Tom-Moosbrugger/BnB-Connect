@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as spotActions from '../../store/spots'
 import SpotPreview from '../SpotPreview';
-import './HomePage.css';
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -18,7 +17,6 @@ const HomePage = () => {
                 <SpotPreview key={spot.id} spot={spot} componentSource='home' />
             ))}
         </article>
-        
     );
 }
 
