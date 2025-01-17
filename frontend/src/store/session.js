@@ -87,7 +87,23 @@ export const addUserSpotsThunk = () => async dispatch => {
 
     const data = await response.json();
 
-    dispatch(addUserSpots(data.Spots));
+    const spots = data.Spots.map(spot => {
+        const updatedSpot = { ...spot };
+
+        if (typeof updatedSpot.price === "number") {
+            updatedSpot.price = updatedSpot.price.toFixed(2);
+        }
+
+        if (updatedSpot.avgRating !== null && typeof updatedSpot.avgRating === "number") {
+            updatedSpot.avgRating = updatedSpot.avgRating.toFixed(1);
+        } else if (updatedSpot.avgRating !== null && typeof updatedSpot.avgRating === "string") {
+            updatedSpot.avgRating = Number(updatedSpot.avgRating || 0).toFixed(1);
+        }
+
+        return updatedSpot;
+    });
+
+    dispatch(addUserSpots(spots));
 
     return response;
 }

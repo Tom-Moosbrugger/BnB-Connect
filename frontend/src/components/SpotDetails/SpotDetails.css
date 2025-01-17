@@ -8,7 +8,13 @@
     padding: 5px;
 }
 
-.spot-details h2 {
+.spot-details-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.spot-details-description h2 {
     font-size: 18px;
     font-weight: bold;
     margin: 5px 0;
