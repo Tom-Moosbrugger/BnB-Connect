@@ -11,8 +11,9 @@ const SpotDetails = () => {
     const { spotId } = useParams();
     const dispatch = useDispatch();
     const spot = useSelector(state => state.spots[spotId]);   
-    const reviews = useSelector(state => state.spots[spotId]?.reviews || []);
+    const reviews = useSelector(state => spotActions.getSpotReviews(state, spotId));
     const sessionUser = useSelector((state) => state.session.user);
+
 
     useEffect(() => {
         dispatch(spotActions.getSpotDetailsThunk(spotId))
@@ -20,17 +21,15 @@ const SpotDetails = () => {
 
     useEffect(() => {
         dispatch(spotActions.getSpotReviewsThunk(spotId));
-    }, [dispatch, spotId])
+    }, [dispatch, spotId]);
+
+     
 
     if (!spot) {
         return <h2>Loading...</h2>;
     }
 
-    if (!spot.avgStarRating) {
-        return <h2>Loading...</h2>;
-    }
-
-    if (!reviews) {
+    if (!spot.SpotImages) {
         return <h2>Loading...</h2>;
     }
 
@@ -55,7 +54,7 @@ const SpotDetails = () => {
                 </section>
             </article>
             <aside className='spot-reviews'>
-                <SpotReviews reviews={reviews} user={sessionUser} spot={spot}/>
+                <SpotReviews reviews={reviews} user={sessionUser} spot={spot} />
             </aside>
         </>
     );

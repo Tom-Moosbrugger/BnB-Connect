@@ -1,0 +1,89 @@
+.spot-review-form {
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 5px 20px;
+}
+
+.spot-review-form header {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.spot-review-form textarea {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+.spot-review-form button {
+    height: 30px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.spot-review-rating-inputs {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    margin: 10px 0;
+}
+
+#stars {
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#stars div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+}
+
+#stars-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.review-filled {
+
+    color: rgb(236, 178, 33)
+}
+
+.review-empty {
+    color: rgb(172, 167, 167)
+}
+
+.disabled {
+    background-color: rgb(65, 62, 62);
+    color: gray;
+    cursor: not-allowed;
+    opacity: .5;
+}
+ 
+.disabled:hover {
+    background-color: rgb(65, 62, 62);
+    color: gray;
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.spot-review-errors-div {
+    font-size: 14px;
+    color: red;
+}
+

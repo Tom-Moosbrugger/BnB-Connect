@@ -360,8 +360,6 @@ router.post('/:spotId/reviews', requireAuth, validateReviewBody, async (req, res
 
         res.status(201).json(newReview);
     }
-
-    res.json('test')
 })
 
 

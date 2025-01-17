@@ -4,7 +4,7 @@
     justify-content: space-between;
 }
 
-.spot-details-numreviews {
+.reserve-spot-numreviews {
     display: flex;
     column-gap: 5px;
 }

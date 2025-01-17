@@ -103,6 +103,19 @@ export const getSpotReviewsThunk = (spotId) => async dispatch => {
     return response;
 }
 
+export const createSpotReviewThunk = (review, spotId) => async () => {
+    const response = await csrfFetch(`/api/spots/${spotId}/reviews`, {
+        method: 'POST',
+        body: JSON.stringify(review)
+    });
+
+    const data = await response.json();
+
+    console.log('RESPONSE', data);
+
+    return response;
+}
+
 export const editSpotThunk = (spot, spotId) => async dispatch => {
     const response = await csrfFetch(`/api/spots/${spotId}`, {
         method: 'PUT',
@@ -132,6 +145,13 @@ const selectSpots = state => state.spots
 
 export const selectSpotsArray = createSelector(selectSpots, (spots) => Object.values(spots));
 
+const getSpotById = (state, spotId) => state.spots[spotId];
+
+export const getSpotReviews = createSelector(
+  [getSpotById],
+  (spot) => spot?.reviews || []
+);
+
 // reducer
 
 const spotsReducer = (state = {}, action) => {
@@ -155,14 +175,14 @@ const spotsReducer = (state = {}, action) => {
         }  
         case ADD_SPOT_REVIEWS: {
             const reviews = [...action.reviews].sort((a, b) => {
-                const dateA = new Date(a.updatedAt);
-                const dateB = new Date(b.updatedAt);
+                const dateA = new Date(a.createdAt);
+                const dateB = new Date(b.createdAt);
     
                 return dateB - dateA;
             });
 
             for (let review of reviews) {
-                let monthYear = new Date(review.updatedAt);
+                let monthYear = new Date(review.createdAt);
                 
                 review.dateString = monthYear.toLocaleDateString("en-US", {
                     timeZone: 'UTC',

@@ -46,7 +46,7 @@ const ProfileButton = ({ user }) => {
     return (
         <>
           <div className='profile-buttons' onClick={toggleMenu}>
-            <FiMenu />
+            <FiMenu id='menu'/>
             <BsPersonCircle />
           </div>
           <div className={ulClassName} ref={ulRef}>

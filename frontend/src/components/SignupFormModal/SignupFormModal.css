@@ -70,14 +70,14 @@ form {
     color: gray;
     cursor: not-allowed;
     opacity: .5;
- }
+}
  
  .disabled:hover {
      background-color: rgb(65, 62, 62);
      color: gray;
      cursor: not-allowed;
      opacity: .5;
-  }
+}
 
 .signup-form-error-message {
     font-size: 14px;

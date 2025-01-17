@@ -4,8 +4,8 @@
     border-bottom: 1px solid grey;
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
-    margin: 0px 15px;
+    margin: 10px 30px;
+    padding: 5px;
 }
 
 .spot-details h2 {
@@ -84,4 +84,11 @@
     height: fit-content;
     padding: 15px;
     row-gap: 20px;
+}
+
+/* reviews section */
+
+.spot-reviews {
+    margin: 10px 30px 20px;
+    padding: 5px
 }
