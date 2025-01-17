@@ -5,7 +5,7 @@ import SpotReviewInput from './SpotReviewInput';
 import * as spotActions from '../../store/spots';
 import './SpotReviewModal.css';
 
-const SpotReviewModal = ({ review, formType, spotId }) => {
+const SpotReviewModal = ({ review, formType, spotId, spotName }) => {
     const [stars, setStars] = useState(review.stars);
     const [reviewText, setReviewText] = useState(review.review);
     const [errors, setErrors] = useState({});
@@ -19,13 +19,15 @@ const SpotReviewModal = ({ review, formType, spotId }) => {
     const onSubmit = async e => {
         e.preventDefault();
 
-        const review = {
+        console.log('HELLO')
+
+        const newReview = {
             review: reviewText,
             stars
         }
 
         if (formType === 'createReview') {
-            await dispatch(spotActions.createSpotReviewThunk(review, spotId))
+            await dispatch(spotActions.createSpotReviewThunk(newReview, spotId))
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data?.errors) setErrors(data.errors);
@@ -45,15 +47,27 @@ const SpotReviewModal = ({ review, formType, spotId }) => {
                     if (data?.errors) setErrors(data.errors);
                 }
             );
-
-            closeModal();
+        } else {
+            await dispatch(spotActions.editSpotReviewThunk(newReview, review.id, spotId))
+                .catch(async (res) => {
+                    const data = await res.json();
+                    if (data?.errors) setErrors(data.errors);
+                }
+            );
         }
+
+        closeModal();
     }
 
     return (
         <form className="spot-review-form">
             <header>
-                <h2>How was your stay?</h2>
+                {formType === 'createReview' && <h2>How was your stay?</h2>}
+                {formType === 'editReview' &&
+                <>
+                    <h2>How was your stay at</h2>
+                    <h2>{spotName}?</h2>
+                </>}
             </header>
             {errors.review &&
             <div className="spot-review-errors-div">

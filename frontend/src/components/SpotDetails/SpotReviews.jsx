@@ -2,10 +2,11 @@ import { FaStar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import OpenModalButton from '../OpenModalButton';
 import CreateSpotReview from "../SpotReviewModal/CreateSpotReview";
+import EditSpotReview from "../SpotReviewModal/EditSpotReview";
 import DeleteModal from "../DeleteModal";
 import './SpotReviews.css';
 
-const SpotReviews = ({ reviews, user, spot: { id: spotId , numReviews, avgStarRating, Owner} }) => {
+const SpotReviews = ({ reviews, user, spot: { id: spotId, name, numReviews, avgStarRating, Owner} }) => {
     let hasReview = false;
     let userIsOwner = false;
 
@@ -47,7 +48,10 @@ const SpotReviews = ({ reviews, user, spot: { id: spotId , numReviews, avgStarRa
                                 buttonText="Delete"
                                 modalComponent={<DeleteModal spotId={spotId} reviewId={review.id} formType={'deleteReview'}/>}
                                 />
-                                <button>Update</button>
+                                 <OpenModalButton
+                                buttonText="Update"
+                                modalComponent={<EditSpotReview spotId={spotId} spotName={name} review={review}/>}
+                                />
                             </div>
                         }
                     </section>

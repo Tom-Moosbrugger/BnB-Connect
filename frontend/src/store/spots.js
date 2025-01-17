@@ -8,7 +8,8 @@ const CREATE_SPOT = 'spots/createSpot'
 const UPDATE_SPOT = 'spots/updateSpot';
 const DELETE_SPOT = 'spots/deleteSpot';
 const ADD_SPOT_REVIEWS = 'spots/addSpotReviews';
-const DELETE_SPOT_REVIEW = 'spots/deleteSpotReview'
+const DELETE_SPOT_REVIEW = 'spots/deleteSpotReview';
+const EDIT_SPOT_REVIEW = 'spots/editSpotReview';
 
 // action functions
 
@@ -43,8 +44,18 @@ const deleteSpot = (spotId) => {
 const addSpotReviews = (reviews, spotId) => {
     return {
         type: ADD_SPOT_REVIEWS,
+        reviews,
+        spotId
+    }
+}
+
+const editSpotReview = (review, reviewId, spotId) => {
+    return {
+        type: EDIT_SPOT_REVIEW,
+        review,
+        reviewId,
         spotId,
-        reviews
+        
     }
 }
 
@@ -91,6 +102,29 @@ export const createSpotThunk = (spot) => async dispatch => {
     return data;
 }
 
+export const editSpotThunk = (spot, spotId) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/${spotId}`, {
+        method: 'PUT',
+        body: JSON.stringify(spot)
+    });
+
+    const data = await response.json();
+
+    dispatch(updateSpot(data));
+
+    return response;
+}
+
+export const deleteSpotThunk = (spotId) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/${spotId}`, {
+        method: 'DELETE'
+    });
+
+    dispatch(deleteSpot(spotId));
+
+    return response;
+}
+
 export const addSpotImagesThunk = (spotImages, spotId) => async () => {
     for (let image of spotImages) {
         await csrfFetch(`/api/spots/${spotId}/images`, {
@@ -121,35 +155,27 @@ export const createSpotReviewThunk = (review, spotId) => async () => {
     return response;
 }
 
+export const editSpotReviewThunk = (review, reviewId, spotId) => async dispatch => {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: 'PUT',
+        body: JSON.stringify(review)
+    });
+
+    const data = await response.json();
+
+    console.log('DATA', data)
+
+    dispatch(editSpotReview(data, reviewId, spotId));
+
+    return response;
+}
+
 export const deleteSpotReviewThunk = (reviewId, spotId) => async dispatch => {
     const response = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     });
 
     dispatch(deleteSpotReview(reviewId, spotId));
-
-    return response;
-}
-
-export const editSpotThunk = (spot, spotId) => async dispatch => {
-    const response = await csrfFetch(`/api/spots/${spotId}`, {
-        method: 'PUT',
-        body: JSON.stringify(spot)
-    });
-
-    const data = await response.json();
-
-    dispatch(updateSpot(data));
-
-    return response;
-}
-
-export const deleteSpotThunk = (spotId) => async dispatch => {
-    const response = await csrfFetch(`/api/spots/${spotId}`, {
-        method: 'DELETE'
-    });
-
-    dispatch(deleteSpot(spotId));
 
     return response;
 }
@@ -182,7 +208,12 @@ const spotsReducer = (state = {}, action) => {
         case CREATE_SPOT:
             return { ...state, [action.spot.id]: action.spot};
         case UPDATE_SPOT:
-            return { ...state, [action.spot.id]: { ...state[action.spot.id], ...action.spot }};
+            return { 
+                ...state, 
+                [action.spot.id]: { 
+                    ...state[action.spot.id], ...action.spot 
+                }
+            };
         case DELETE_SPOT: {
             const { [action.spotId]: _, ...newState } = state;
             console.log(_);
@@ -206,11 +237,34 @@ const spotsReducer = (state = {}, action) => {
                   });
             }
 
-            return { ...state, [action.spotId]: { ...state[action.spotId], reviews }};
+            return { 
+                ...state, 
+                [action.spotId]: { 
+                    ...state[action.spotId], reviews 
+                }
+            };
         }  
+        case EDIT_SPOT_REVIEW:
+            return {
+                ...state,
+                [action.spotId]: {
+                    ...state[action.spotId],
+                    reviews: state[action.spotId].reviews.map(review => 
+                        review.id === action.reviewId ? { ...review, ...action.review } : review
+                    )
+                }
+            };
         case DELETE_SPOT_REVIEW:
             state[8]
-            return { ...state, [action.spotId]: { ...state[action.spotId], reviews: state[action.spotId].reviews.filter(review => review.id !== action.reviewId) }};
+            return { 
+                ...state, 
+                [action.spotId]: { 
+                    ...state[action.spotId], 
+                    reviews: state[action.spotId].reviews.filter(review => 
+                        review.id !== action.reviewId
+                    ) 
+                }
+            };
         default:
             return state;
     }
