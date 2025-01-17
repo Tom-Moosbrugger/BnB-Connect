@@ -74,7 +74,23 @@ export const loadSpotsThunk = () => async dispatch => {
 
     const data = await response.json();
 
-    dispatch(loadSpots(data.Spots));
+    const spots = data.Spots.map(spot => {
+        const updatedSpot = { ...spot };
+
+        if (typeof updatedSpot.price === "number") {
+            updatedSpot.price = updatedSpot.price.toFixed(2);
+        }
+
+        if (updatedSpot.avgRating !== null && typeof updatedSpot.avgRating === "number") {
+            updatedSpot.avgRating = updatedSpot.avgRating.toFixed(1);
+        } else if (updatedSpot.avgRating !== null && typeof updatedSpot.avgRating === "string") {
+            updatedSpot.avgRating = Number(updatedSpot.avgRating || 0).toFixed(1);
+        }
+
+        return updatedSpot;
+    });
+
+    dispatch(loadSpots(spots));
 
     return response;
 }
@@ -84,7 +100,21 @@ export const getSpotDetailsThunk = (spotId) => async dispatch => {
 
     const data = await response.json();
 
-    dispatch(updateSpot(data));
+    const updatedSpot = { ...data };
+
+    if (typeof updatedSpot.price === "number") {
+        updatedSpot.price = updatedSpot.price.toFixed(2);
+    }
+
+    if (updatedSpot.avgStarRating !== null && typeof updatedSpot.avgStarRating === "number") {
+        updatedSpot.avgStarRating = updatedSpot.avgStarRating.toFixed(1);
+    } else if (updatedSpot.avgStarRating !== null && typeof updatedSpot.avgStarRating === "string") {
+        updatedSpot.avgStarRating = Number(updatedSpot.avgStarRating || 0).toFixed(1);
+    }
+
+    console.log('\nDATA\n', updatedSpot);
+
+    dispatch(updateSpot(updatedSpot));
 
     return response;
 }
