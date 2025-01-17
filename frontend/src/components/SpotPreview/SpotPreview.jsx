@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
 import OpenModalButton from '../OpenModalButton';
-import DeleteSpotModal from '../DeleteSpotModal';
+import DeleteModal from '../DeleteModal';
 import './SpotPreview.css';
 
 const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, price }, componentSource }) => {
@@ -33,7 +33,7 @@ const SpotPreview = ({ spot: { id, name, city, state, avgRating, previewImage, p
                 <button onClick={handleNavigate}>Update</button>
                 <OpenModalButton
                  buttonText="Delete"
-                 modalComponent={<DeleteSpotModal spotId={id}/>}
+                 modalComponent={<DeleteModal spotId={id} formType='deleteSpot'/>}
                 />
             </div>}
         </section>      

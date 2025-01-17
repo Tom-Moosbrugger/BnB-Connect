@@ -2,9 +2,10 @@ import { FaStar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import OpenModalButton from '../OpenModalButton';
 import CreateSpotReview from "../SpotReviewModal/CreateSpotReview";
+import DeleteModal from "../DeleteModal";
 import './SpotReviews.css';
 
-const SpotReviews = ({ reviews, user, spot: { id: spotId , numReviews, avgStarRating, Owner}, onModalClose }) => {
+const SpotReviews = ({ reviews, user, spot: { id: spotId , numReviews, avgStarRating, Owner} }) => {
     let hasReview = false;
     let userIsOwner = false;
 
@@ -28,7 +29,7 @@ const SpotReviews = ({ reviews, user, spot: { id: spotId , numReviews, avgStarRa
             <section>
                 <p className="spot-reviews-numreviews">
                     <FaStar /> 
-                    <span> {avgStarRating.toString().slice(0, 3)}</span> 
+                    <span> {avgStarRating?.toString().slice(0, 3)}</span> 
                     <span id="dot-span"><GoDotFill /></span> 
                     <span> {+numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
                 </p>
@@ -42,7 +43,10 @@ const SpotReviews = ({ reviews, user, spot: { id: spotId , numReviews, avgStarRa
                         <p>{review.review}</p>
                         {user && user.id === review.User.id && 
                             <div className="update-delete-reviews">
-                                <button>Delete</button>
+                                 <OpenModalButton
+                                buttonText="Delete"
+                                modalComponent={<DeleteModal spotId={spotId} reviewId={review.id} formType={'deleteReview'}/>}
+                                />
                                 <button>Update</button>
                             </div>
                         }

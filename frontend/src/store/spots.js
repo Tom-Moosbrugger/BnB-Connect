@@ -8,6 +8,7 @@ const CREATE_SPOT = 'spots/createSpot'
 const UPDATE_SPOT = 'spots/updateSpot';
 const DELETE_SPOT = 'spots/deleteSpot';
 const ADD_SPOT_REVIEWS = 'spots/addSpotReviews';
+const DELETE_SPOT_REVIEW = 'spots/deleteSpotReview'
 
 // action functions
 
@@ -44,6 +45,14 @@ const addSpotReviews = (reviews, spotId) => {
         type: ADD_SPOT_REVIEWS,
         spotId,
         reviews
+    }
+}
+
+const deleteSpotReview = (reviewId, spotId) => {
+    return {
+        type: DELETE_SPOT_REVIEW,
+        reviewId,
+        spotId
     }
 }
 
@@ -109,9 +118,15 @@ export const createSpotReviewThunk = (review, spotId) => async () => {
         body: JSON.stringify(review)
     });
 
-    const data = await response.json();
+    return response;
+}
 
-    console.log('RESPONSE', data);
+export const deleteSpotReviewThunk = (reviewId, spotId) => async dispatch => {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: 'DELETE'
+    });
+
+    dispatch(deleteSpotReview(reviewId, spotId));
 
     return response;
 }
@@ -192,7 +207,10 @@ const spotsReducer = (state = {}, action) => {
             }
 
             return { ...state, [action.spotId]: { ...state[action.spotId], reviews }};
-        }   
+        }  
+        case DELETE_SPOT_REVIEW:
+            state[8]
+            return { ...state, [action.spotId]: { ...state[action.spotId], reviews: state[action.spotId].reviews.filter(review => review.id !== action.reviewId) }};
         default:
             return state;
     }

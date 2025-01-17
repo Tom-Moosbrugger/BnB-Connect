@@ -1,5 +1,5 @@
 .spot-reviews-numreviews {
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     column-gap: 5px;
 }
@@ -14,7 +14,7 @@
     flex-direction: column;
     width: 50%;
     row-gap: 15px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 
 .no-reviews button {
@@ -48,10 +48,12 @@
 .update-delete-reviews {
    width: 100%;
    display: flex;
-   column-gap: 20px;
+   column-gap: 10px;
+   margin-top: 5px;
 }
 
 .review button {
-    height: 30px;
-    width: 80px;
+    font-size: 14px;
+    height: 20px;
+    width: 70px;
 }
