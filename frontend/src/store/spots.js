@@ -205,7 +205,7 @@ export const deleteSpotReviewThunk = (reviewId, spotId) => async dispatch => {
         method: 'DELETE'
     });
 
-    dispatch(deleteSpotReview(reviewId, spotId));
+    await dispatch(deleteSpotReview(reviewId, spotId));
 
     return response;
 }

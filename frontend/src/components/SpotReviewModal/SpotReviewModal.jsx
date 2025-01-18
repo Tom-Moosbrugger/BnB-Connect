@@ -54,6 +54,20 @@ const SpotReviewModal = ({ review, formType, spotId, spotName }) => {
                     if (data?.errors) setErrors(data.errors);
                 }
             );
+
+            await dispatch(spotActions.getSpotDetailsThunk(spotId))
+                .catch(async (res) => {
+                    const data = await res.json();
+                    if (data?.errors) setErrors(data.errors);
+                }
+            );
+
+            await dispatch(spotActions.getSpotReviewsThunk(spotId))
+                .catch(async (res) => {
+                    const data = await res.json();
+                    if (data?.errors) setErrors(data.errors);
+                }
+            );
         }
 
         closeModal();

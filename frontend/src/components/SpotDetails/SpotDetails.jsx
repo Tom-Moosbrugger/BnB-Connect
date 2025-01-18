@@ -35,6 +35,7 @@ const SpotDetails = () => {
 
     return (
         <>
+
             <article className='spot-details'>
                 <header className='spot-details-header'>
                     <h2>{spot.name}</h2>
@@ -46,7 +47,7 @@ const SpotDetails = () => {
                 <section className='spot-details-information'>
                     <div className='spot-details-description'>
                         <h2>Hosted by {spot.Owner.firstName} {spot.Owner.lastName}</h2>
-                        <p>{spot?.description}</p>
+                        <p>{spot.description}</p>
                     </div>
                     <div className='spot-details-reserve'>
                         <ReserveSpot spot={spot} />
