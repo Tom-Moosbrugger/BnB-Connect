@@ -11,6 +11,18 @@ const SpotImagesSection = ({ spotImages }) => {
         }
     });
     
+    if (reorderedImages.length < 5) {
+        const numPlaceholders = 5 - reorderedImages.length;
+
+        for (let i = 0; i < numPlaceholders; i++) {
+            reorderedImages.push({ 
+                id: 'placeholder' + i, 
+                url: 'https://t4.ftcdn.net/jpg/03/76/40/81/240_F_376408140_kiazgwOvkEy0e50oxgF5kllIl7j2q1SQ.jpg', 
+                preview: false 
+            });
+        }
+    }
+    
     return (
         <>
             {reorderedImages.map((image, idx) => (

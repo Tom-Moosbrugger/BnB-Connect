@@ -208,6 +208,7 @@ const SpotForm = ({ formData, formType }) => {
                                 <input 
                                 type='number'
                                 placeholder="Latitude"
+                                step='.000001'
                                 value={lat}
                                 onChange={e => setLat(e.target.value)}
                                 />
@@ -218,6 +219,7 @@ const SpotForm = ({ formData, formType }) => {
                                 <input
                                 type='number'
                                 placeholder="Longitude"
+                                step='.000001'
                                 value={lng}
                                 onChange={e => setLng(e.target.value)}
                                 />
@@ -265,6 +267,7 @@ const SpotForm = ({ formData, formType }) => {
                         <input 
                             type="number"
                             placeholder="Price per night (USD)"
+                            step='.01'
                             min={0}
                             value={price}
                             onChange={e => setPrice(e.target.value)}
