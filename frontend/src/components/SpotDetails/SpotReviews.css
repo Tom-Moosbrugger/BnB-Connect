@@ -9,7 +9,7 @@
     width: 50%;
 }
 
-.no-reviews {
+.no-reviews, .some-reviews {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -18,6 +18,11 @@
 }
 
 .no-reviews button {
+    height: 30px;
+    width: 170px;
+}
+
+.some-reviews button {
     height: 30px;
     width: 170px;
 }

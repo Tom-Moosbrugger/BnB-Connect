@@ -30,6 +30,20 @@ const DeleteSpotModal = ({ spotId, formType, reviewId }) => {
                     if (data?.message) setErrors(data);
                 }
             );
+
+            await dispatch(spotActions.getSpotDetailsThunk(spotId))
+                    .catch(async (res) => {
+                        const data = await res.json();
+                        if (data?.errors) setErrors(data.errors);
+                    }
+                );
+
+            await dispatch(spotActions.getSpotReviewsThunk(spotId))
+                .catch(async (res) => {
+                    const data = await res.json();
+                    if (data?.errors) setErrors(data.errors);
+                }
+            );
         }
 
         closeModal();

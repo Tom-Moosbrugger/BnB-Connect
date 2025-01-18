@@ -27,14 +27,18 @@ const SpotReviews = ({ reviews, user, spot: { id: spotId, name, numReviews, avgS
         </section>  
     ) : (
         <>
-            <section>
+            <section className='some-reviews'>
                 <p className="spot-reviews-numreviews">
                     <FaStar /> 
                     <span> {avgStarRating?.toString().slice(0, 3)}</span> 
                     <span id="dot-span"><GoDotFill /></span> 
                     <span> {+numReviews > 1 ? `${numReviews} reviews` : `${numReviews} review`}</span>
                 </p>
-                {user && !userIsOwner && !hasReview && <button>Post Your Review</button>}
+                {user && !userIsOwner && !hasReview &&
+                <OpenModalButton
+                buttonText="Post Your Review"
+                modalComponent={<CreateSpotReview spotId={spotId}/>}
+                />}
             </section>
             <section className="all-reviews">
                 {reviews.map(review => (
@@ -58,9 +62,6 @@ const SpotReviews = ({ reviews, user, spot: { id: spotId, name, numReviews, avgS
                 ))}
             </section>
         </>
-        
-
-        
     );
     
     
