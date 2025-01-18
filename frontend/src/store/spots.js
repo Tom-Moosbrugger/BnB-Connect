@@ -112,8 +112,6 @@ export const getSpotDetailsThunk = (spotId) => async dispatch => {
         updatedSpot.avgStarRating = Number(updatedSpot.avgStarRating || 0).toFixed(1);
     }
 
-    console.log('\nDATA\n', updatedSpot);
-
     dispatch(updateSpot(updatedSpot));
 
     return response;
@@ -192,8 +190,6 @@ export const editSpotReviewThunk = (review, reviewId, spotId) => async dispatch 
     });
 
     const data = await response.json();
-
-    console.log('DATA', data)
 
     dispatch(editSpotReview(data, reviewId, spotId));
 
