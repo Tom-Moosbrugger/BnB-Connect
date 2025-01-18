@@ -37,7 +37,8 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
-    padding: 3px;
+    margin: 3px;
+    border: .5px solid grey;
 }
 
 #spot-image-1 {
