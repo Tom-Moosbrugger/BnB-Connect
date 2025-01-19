@@ -5,7 +5,7 @@
 }
 
 .all-reviews {
-    margin-top: 15px;
+    margin-top: 10px;
     width: 50%;
 }
 
@@ -14,7 +14,6 @@
     flex-direction: column;
     width: 50%;
     row-gap: 15px;
-    /* margin-top: 15px; */
 }
 
 .no-reviews button {
@@ -61,4 +60,16 @@
     font-size: 14px;
     height: 20px;
     width: 70px;
+}
+
+div.update-delete-reviews > button {
+    border-radius: 0px;
+}
+
+section.some-reviews > button {
+    border-radius: 0px;
+}
+
+section.no-reviews > button {
+    border-radius: 0px;
 }

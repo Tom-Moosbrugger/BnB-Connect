@@ -5,7 +5,7 @@ import * as spotActions from '../../store/spots';
 import * as sessionActions from '../../store/session'
 import './DeleteModal.css';
 
-const DeleteSpotModal = ({ spotId, formType, reviewId }) => {
+const DeleteModal = ({ spotId, formType, reviewId }) => {
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
     const { closeModal } = useModalContext();
@@ -72,4 +72,4 @@ const DeleteSpotModal = ({ spotId, formType, reviewId }) => {
 
 }
 
-export default DeleteSpotModal;
+export default DeleteModal;

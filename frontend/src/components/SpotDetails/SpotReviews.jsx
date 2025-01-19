@@ -48,7 +48,8 @@ const SpotReviews = ({ reviews, user, spot: { id: spotId, name, numReviews, avgS
                         <p>{review.review}</p>
                         {user && user.id === review.User.id && 
                             <div className="update-delete-reviews">
-                                 <OpenModalButton
+                                <OpenModalButton
+                                id='delete-review'
                                 buttonText="Delete"
                                 modalComponent={<DeleteModal spotId={spotId} reviewId={review.id} formType={'deleteReview'}/>}
                                 />

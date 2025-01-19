@@ -211,6 +211,106 @@ module.exports = {
         url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
         preview: false
       },
+      {
+        spotId: 9,
+        url: "https://cdn.pixabay.com/photo/2018/01/08/22/58/architecture-3070493_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 9,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 9,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 9,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 9,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 10,
+        url: "https://cdn.pixabay.com/photo/2019/06/28/12/18/house-4304096_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 10,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 10,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 10,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 10,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 11,
+        url: "https://cdn.pixabay.com/photo/2022/10/08/17/39/jungle-7507490_1280.jpg",
+        preview: true
+      },
+      {
+        spotId: 11,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 11,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 11,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 11,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 12,
+        url: "https://cdn.pixabay.com/photo/2024/06/23/22/49/loft-8848859_1280.png",
+        preview: true
+      },
+      {
+        spotId: 12,
+        url: "https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 12,
+        url: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 12,
+        url: "https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg",
+        preview: false
+      },
+      {
+        spotId: 12,
+        url: "https://cdn.pixabay.com/photo/2024/05/14/08/12/real-estate-8760600_1280.jpg",
+        preview: false
+      },
     ], { validate: true });
   },
 
