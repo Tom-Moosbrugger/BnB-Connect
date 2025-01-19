@@ -288,7 +288,7 @@ module.exports = {
       },
       {
         spotId: 12,
-        url: "https://cdn.pixabay.com/photo/2024/06/23/22/49/loft-8848859_1280.png",
+        url: "https://cdn.pixabay.com/photo/2014/08/08/21/22/interior-design-413718_1280.jpg",
         preview: true
       },
       {
