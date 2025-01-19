@@ -129,7 +129,7 @@ module.exports = {
         lat: 79.7645358,
         lng: -100.4730327,
         name: "Rustic Mansion",
-        description: "Nestled in the heart of Southampton, NY, this secluded mansion offers luxury and tranquility. With expansive grounds, elegant interiors, and modern amenities, it is the perfect retreat for family getaways, celebrations, or a private escape near the Hamptons.",
+        description: "Nestled in Southampton, this secluded mansion offers luxury and tranquility. With expansive grounds, elegant interiors, and modern amenities, it is the perfect retreat for family getaways, celebrations, or a private escape near the Hamptons.",
         price: 999.99,
       },
       {
@@ -141,7 +141,7 @@ module.exports = {
         lat: 79.7645358,
         lng: -100.4730327,
         name: "Art Deco Jungle",
-        description: "Experience unparalleled luxury in this hyper-modern mansion set amidst a lush jungle. With floor-to-ceiling windows, sleek design, and cutting-edge amenities, this private oasis offers the ultimate escape into nature while enjoying total comfort and style.",
+        description: "Experience unparalleled luxury in this hyper-modern mansion set amidst a lush jungle. With floor-to-ceiling windows, sleek design, and cutting-edge amenities, this private oasis offers the ultimate escape into nature while enjoying total style.",
         price: 750,
       },
       {
@@ -153,7 +153,7 @@ module.exports = {
         lat: 79.7645358,
         lng: -100.4730327,
         name: "Cozy Loft",
-        description: "Stay in this chic NYC loft, blending urban style with comfort. Featuring open spaces, industrial design, and stunning city views, it’s the perfect base for exploring the vibrant culture, restaurants, and nightlife of Manhattan while enjoying modern luxury.",
+        description: "Stay in this chic loft, blending urban style with comfort. Featuring open spaces, industrial design, and stunning city views, it is the perfect base for exploring the vibrant culture, restaurants, and nightlife of Manhattan.",
         price: 450,
       }
     ], { validate: true });
